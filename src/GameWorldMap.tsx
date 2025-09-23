@@ -1277,6 +1277,9 @@ export default function GameWorldMap() {
     if (!name) {
       return { color: NEUTRAL_COLOR, weight: 1, fillColor: NEUTRAL_COLOR, fillOpacity: 0.1 } as L.PathOptions;
     }
+    if (name === selectedCountry) {
+      return { color: "#90EE90", weight: 2, fillColor: "#90EE90", fillOpacity: 0.4 } as L.PathOptions;
+    }
     const ownerIds = getOwnersForCountry(name);
     const ownerPalette = ownerIds
       .map((id) => findPlayerById(id)?.color)
